@@ -1,0 +1,48 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Zhihu",
+	"behavior": "create",
+	"noteContentFormat": "{{selectorHtml:body|markdown}}\n\n",
+	"properties": [
+		{
+			"name": "title",
+			"value": "{{title}}",
+			"type": "text"
+		},
+		{
+			"name": "source",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "{{selector:span[class=\\\"UserLink AuthorInfo-name\\\"]}}",
+			"type": "multitext"
+		},
+		{
+			"name": "published",
+			"value": "{{selector:div[class=\\\"ContentItem-time\\\"]|split:\\\" \\\"|slice:1,2}}",
+			"type": "date"
+		},
+		{
+			"name": "created",
+			"value": "{{date}}",
+			"type": "date"
+		},
+		{
+			"name": "description",
+			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "clippings",
+			"type": "multitext"
+		}
+	],
+	"triggers": [
+		"https://www.zhihu.com/"
+	],
+	"noteNameFormat": "{{title}}",
+	"path": "Clippings"
+}
